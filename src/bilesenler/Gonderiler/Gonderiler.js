@@ -4,14 +4,13 @@ import "./Gonderiler.css";
 const Gonderiler = (props) => {
   // 🔥 Gönderiler'in ebeveyninin doğru değişkenleri doğru şekilde ilettiğine emin olun!
   const { gonderiyiBegen, gonderiler } = props;
-
-  const a = gonderiler.map((gonderi) => {
-    console.log(gonderi);
-  });
+  console.log("Gönderilerde: ", gonderiler);
 
   return (
     <div className="posts-container-wrapper">
-      <div>Çıktı: {}</div>
+      {gonderiler.map((gonderi) => {
+        return <Gonderi gonderi={gonderi} gonderiyiBegen={gonderiyiBegen} />;
+      })}
       {/* gönderiler dizisini işleyip her döngüde bir Gönderi bileşeni çağırın*/}
       {/* Gönderi'nin çağırılmasında hangi propları kullanmanız gerektiğine dikkat edin! */}
     </div>
